@@ -8,18 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		153CA37A263F573700A085BE /* AITicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153CA379263F573700A085BE /* AITicTacToeApp.swift */; };
-		153CA37C263F573700A085BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153CA37B263F573700A085BE /* ContentView.swift */; };
+		153CA37C263F573700A085BE /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153CA37B263F573700A085BE /* GameView.swift */; };
 		153CA37E263F573800A085BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153CA37D263F573800A085BE /* Assets.xcassets */; };
 		153CA381263F573800A085BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 153CA380263F573800A085BE /* Preview Assets.xcassets */; };
+		1573EBC6263FF3E700CAD8C1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573EBC5263FF3E700CAD8C1 /* GameViewModel.swift */; };
+		15C8A317263F64F50043C0D0 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C8A316263F64F50043C0D0 /* Alerts.swift */; };
+		15F8D10E263FF87600DCFD8A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F8D10D263FF87600DCFD8A /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		153CA376263F573700A085BE /* AITicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AITicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		153CA379263F573700A085BE /* AITicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITicTacToeApp.swift; sourceTree = "<group>"; };
-		153CA37B263F573700A085BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		153CA37B263F573700A085BE /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		153CA37D263F573800A085BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		153CA380263F573800A085BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		153CA382263F573800A085BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1573EBC5263FF3E700CAD8C1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		15C8A316263F64F50043C0D0 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		15F8D10D263FF87600DCFD8A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +58,11 @@
 		153CA378263F573700A085BE /* AITicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				15C8A316263F64F50043C0D0 /* Alerts.swift */,
 				153CA379263F573700A085BE /* AITicTacToeApp.swift */,
-				153CA37B263F573700A085BE /* ContentView.swift */,
+				153CA37B263F573700A085BE /* GameView.swift */,
+				15F8D10D263FF87600DCFD8A /* Model.swift */,
+				1573EBC5263FF3E700CAD8C1 /* GameViewModel.swift */,
 				153CA37D263F573800A085BE /* Assets.xcassets */,
 				153CA382263F573800A085BE /* Info.plist */,
 				153CA37F263F573800A085BE /* Preview Content */,
@@ -138,7 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				153CA37C263F573700A085BE /* ContentView.swift in Sources */,
+				15F8D10E263FF87600DCFD8A /* Model.swift in Sources */,
+				1573EBC6263FF3E700CAD8C1 /* GameViewModel.swift in Sources */,
+				153CA37C263F573700A085BE /* GameView.swift in Sources */,
+				15C8A317263F64F50043C0D0 /* Alerts.swift in Sources */,
 				153CA37A263F573700A085BE /* AITicTacToeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
