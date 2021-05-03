@@ -15,28 +15,7 @@ struct GameView: View {
 		GeometryReader { geometry in
 			VStack {
 				
-				HStack(spacing: 10) {
-					VStack {
-						Text("Human")
-							.font(.title)
-						Text("\(viewModel.winCounter.human)")
-							.font(.title)
-					}
-					
-					VStack {
-						Text("Draw")
-							.font(.title)
-						Text("\(viewModel.winCounter.draw)")
-							.font(.title)
-					}
-					
-					VStack {
-						Text("Computer")
-							.font(.title)
-						Text("\(viewModel.winCounter.computer)")
-							.font(.title)
-					}
-				}
+				WinCounterView(viewModel: viewModel)
 				
 				Spacer()
 				
@@ -101,3 +80,33 @@ struct PlayerIndicatorView: View {
 }
 
 
+
+struct WinCounterView: View {
+	
+	@StateObject var viewModel: GameViewModel
+	
+	var body: some View {
+		HStack(spacing: 10) {
+			VStack {
+				Text("Human")
+					.font(.title)
+				Text("\(viewModel.winCounter.human)")
+					.font(.title)
+			}
+			
+			VStack {
+				Text("Draw")
+					.font(.title)
+				Text("\(viewModel.winCounter.draw)")
+					.font(.title)
+			}
+			
+			VStack {
+				Text("Computer")
+					.font(.title)
+				Text("\(viewModel.winCounter.computer)")
+					.font(.title)
+			}
+		}
+	}
+}
