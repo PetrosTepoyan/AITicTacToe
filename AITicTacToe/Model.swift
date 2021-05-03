@@ -19,3 +19,10 @@ struct Move {
 		return player == .human ? "xmark" : "circle"
 	}
 }
+
+enum Difficutly {
+	static let easy = "Easy"
+	static let mediocre = "Mediocre"
+	static let promising = "Promising"
+	static let hard = "Hard"
+}

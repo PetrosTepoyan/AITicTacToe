@@ -25,6 +25,23 @@ final class GameViewModel: ObservableObject {
 	@Published var isGameboardDisabled: Bool = false
 	@Published var alertItem: AlertItem?
 	@Published var winCounter: WinCounter = WinCounter()
+	@Published var sliderValue: Double = 0.0
+	@Published var difficulty: String = Difficutly.easy
+	
+	func changeDifficulty() {
+		switch Int(sliderValue) {
+			case 0:
+				difficulty = Difficutly.easy
+			case 1:
+				difficulty = Difficutly.mediocre
+			case 2:
+				difficulty = Difficutly.promising
+			case 3:
+				difficulty = Difficutly.hard
+			default: ()
+		}
+	}
+	
 	func processPlayerMove(for i: Int) {
 		guard moves[i] == nil else { return }
 		moves[i] = Move(player: .human, boardIndex: i)
@@ -78,23 +95,24 @@ final class GameViewModel: ObservableObject {
 		return nil
 	}
 	
-	
 	func determineComputerMovePosition(in moves: [Move?]) -> Int {
 		
 		// If AI can win, then win
-		
-		if let position = playerMovePosition(player: .computer) {
+		if difficulty == Difficutly.hard,
+		   let position = playerMovePosition(player: .computer) {
 			return position
 		}
 		
 		// If AI can't win, then block
-		if let position = playerMovePosition(player: .human) {
+		if difficulty == Difficutly.promising,
+		   let position = playerMovePosition(player: .human) {
 			return position
 		}
 		
 		// If AI can't block, then take the middle square
 		let centerSquare = 4
-		if moves[centerSquare] == nil {
+		if difficulty == Difficutly.mediocre,
+		   moves[centerSquare] == nil {
 			return centerSquare
 		}
 		

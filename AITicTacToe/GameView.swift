@@ -11,6 +11,7 @@ struct GameView: View {
 	
 	@StateObject private var viewModel = GameViewModel()
 	
+	
 	var body: some View {
 		GeometryReader { geometry in
 			VStack {
@@ -33,6 +34,19 @@ struct GameView: View {
 						}
 					}
 				}
+				VStack {
+					Slider(value: $viewModel.sliderValue,
+						   in: 0...3,
+						   step: 1,
+						   onEditingChanged: { editing in
+							viewModel.changeDifficulty()
+						   })
+					
+					Text("\(viewModel.difficulty)")
+				}
+				
+					
+				
 				Spacer()
 			}
 			.disabled(viewModel.isGameboardDisabled)
