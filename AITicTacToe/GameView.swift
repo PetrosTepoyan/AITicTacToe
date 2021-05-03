@@ -14,7 +14,32 @@ struct GameView: View {
 	var body: some View {
 		GeometryReader { geometry in
 			VStack {
+				
+				HStack(spacing: 10) {
+					VStack {
+						Text("Human")
+							.font(.title)
+						Text("\(viewModel.winCounter.human)")
+							.font(.title)
+					}
+					
+					VStack {
+						Text("Draw")
+							.font(.title)
+						Text("\(viewModel.winCounter.draw)")
+							.font(.title)
+					}
+					
+					VStack {
+						Text("Computer")
+							.font(.title)
+						Text("\(viewModel.winCounter.computer)")
+							.font(.title)
+					}
+				}
+				
 				Spacer()
+				
 				LazyVGrid(columns: viewModel.columns, spacing: 15) {
 					ForEach(0..<9) { i in
 						ZStack {

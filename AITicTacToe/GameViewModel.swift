@@ -24,18 +24,20 @@ final class GameViewModel: ObservableObject {
 	@Published var moves: [Move?] = Array(repeating: nil, count: 9)
 	@Published var isGameboardDisabled: Bool = false
 	@Published var alertItem: AlertItem?
-	
+	@Published var winCounter: WinCounter = WinCounter()
 	func processPlayerMove(for i: Int) {
 		guard moves[i] == nil else { return }
 		moves[i] = Move(player: .human, boardIndex: i)
 		
 		if checkWinCondition(for: .human, in: moves) {
 			alertItem = AlertContext.humanWin
+			winCounter.human += 1
 			return
 		}
 		
 		if checkForDraw(in: moves) {
 			alertItem = AlertContext.draw
+			winCounter.draw += 1
 			return
 		}
 		
@@ -49,11 +51,13 @@ final class GameViewModel: ObservableObject {
 			
 			if checkWinCondition(for: .computer, in: moves) {
 				alertItem = AlertContext.computerWin
+				winCounter.computer += 1
 				return
 			}
 			
 			if checkForDraw(in: moves) {
 				alertItem = AlertContext.draw
+				winCounter.draw += 1
 				return
 			}
 		}
@@ -119,6 +123,12 @@ final class GameViewModel: ObservableObject {
 	
 	func resetGame() {
 		moves = Array(repeating: nil, count: 9)
+	}
+	
+	struct WinCounter {
+		var human: Int = 0
+		var draw: Int = 0
+		var computer: Int = 0
 	}
 }
 
